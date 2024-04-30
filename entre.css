@@ -1,0 +1,138 @@
+html {
+    margin: 0;
+    padding: 200px;
+    box-sizing: border-box;
+    font-family: "Mynerve", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(12, 13, 49);
+    color: white;
+}
+
+.txt-animado {
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.txt-animado span {
+    position: relative;
+}
+
+.txt-animado span::before {
+    content: "";
+    color: #FFB6BD;
+    animation: palavras 25s infinite;
+}
+
+.txt-animado span::after {
+    content: "";
+    position: absolute;
+    height: 105%;
+    border-left: 3px solid #FFB6BD;
+    right: -10px;
+    opacity: 1;
+    animation: cursor .8s infinite, digita 25s steps(15) infinite;
+    width: calc(100% + 15px);
+    background-color: rgb(12, 13, 49);
+
+}
+
+.botao {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    bottom: 40%;
+    transform: translate(-50%, 50%);
+    padding: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+img{
+margin-top: 5px;
+width: 60px;
+}
+
+@keyframes digita {
+
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95% {
+        width: 0;
+    }
+
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85% {
+        width: calc(100% + 15px);
+    }
+
+}
+
+@keyframes cursor {
+    0% {
+        border-left: 3px solid black;
+    }
+
+}
+
+@keyframes palavras {
+
+    0%,
+    20% {
+        content: "Seja bem-vindo ao meu portfólio!";
+    }
+
+    21%,
+    40% {
+        content: "Eu me chamo Marcelle Neves Sandy.";
+    }
+
+    41%,
+    60% {
+        content: "Esse não será um portfólio comum.";
+    }
+
+    61%,
+    80% {
+        content: "Será uma experiência!";
+    }
+
+    81%,
+    100% {
+        content: "Clique no icone abaixo!";
+    }
+}
+@media screen and (max-width: 600px) {
+    .txt-animado {
+        font-size: 16px;
+    }
+
+    .botao {
+        padding: 5px 10px;
+        margin-top: 10px;
+    }
+
+    img {
+        width: 30px;
+    }
+}
